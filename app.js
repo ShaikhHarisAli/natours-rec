@@ -14,6 +14,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const helmet = require('helmet');
 const cors = require('cors');
+const compression = require('compression')
 
 const viewRouter = require('./routes/viewRoutes');
 
@@ -93,6 +94,7 @@ app.use(
     })
   );
 
+app.use(compression())
 // app.use((req,res,next) =>{
 //     log("Hellow from the Middleware")
 //     next();
@@ -102,8 +104,7 @@ app.use(
 // Test Middleware
 app.use((req,res,next) =>{
     req.requestTime = new Date().toISOString();
-    //console.log(req.headers);
-    console.log("Cookies ==>",req.url);
+    console.log("Req URL ==>",req.url);
     next();
 })
 /// 2) Route Hanlders 

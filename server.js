@@ -18,7 +18,7 @@ mongoose.connect(DB,{
     useCreateIndex:true,
     useFindAndModify:false
 }).then(() => {
-    //console.log(con.connections);
+    
     console.log('DB connection Successful');
 })
 
@@ -30,7 +30,7 @@ mongoose.connect(DB,{
 // })
 
 //testTour.save().then(doc => console.log(doc)).catch(err => console.log('ERROR : ', err))
-//console.log(process.env);
+
 const port = process.env.PORT || 3000;
 const server=app.listen(port ,()=>{
     console.log(`App is running on Port ${port}`);
