@@ -53,6 +53,9 @@ app.use(
   })
 );
 
+
+app.options('*',cors())
+
 // Development Logging
 console.log("NODE ENV ==>", process.env.NODE_ENV);
 if(process.env.NODE_ENV === 'development'){   
